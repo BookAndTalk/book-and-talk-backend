@@ -1,4 +1,4 @@
-package book.talk.entity;
+package book.talk.callbyaladin.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

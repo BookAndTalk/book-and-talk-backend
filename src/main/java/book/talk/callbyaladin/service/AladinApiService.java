@@ -1,10 +1,10 @@
-package book.talk.service;
+package book.talk.callbyaladin.service;
 
-import book.talk.config.AladinApiProperties;
-import book.talk.entity.AladinIsbnEntity;
-import book.talk.entity.AladinIsbnRepository;
-import book.talk.model.aladin.AladinRequest;
-import book.talk.model.aladin.AladinResponse;
+import book.talk.callbyaladin.config.AladinApiProperties;
+import book.talk.callbyaladin.entity.AladinIsbnEntity;
+import book.talk.callbyaladin.entity.AladinIsbnRepository;
+import book.talk.callbyaladin.model.aladin.AladinRequest;
+import book.talk.callbyaladin.model.aladin.AladinResponse;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,8 @@
-package book.talk.controller;
+package book.talk.callbyaladin.controller;
 
-import book.talk.model.aladin.AladinRequest;
-import book.talk.model.aladin.AladinResponse;
-import book.talk.service.AladinApiService;
+import book.talk.callbyaladin.model.aladin.AladinRequest;
+import book.talk.callbyaladin.model.aladin.AladinResponse;
+import book.talk.callbyaladin.service.AladinApiService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

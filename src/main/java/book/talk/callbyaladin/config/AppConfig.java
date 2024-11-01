@@ -1,4 +1,4 @@
-package book.talk.config;
+package book.talk.callbyaladin.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

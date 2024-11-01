@@ -1,4 +1,4 @@
-package book.talk.model.aladin;
+package book.talk.callbyaladin.model.aladin;
 
 import lombok.Data;
 

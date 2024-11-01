@@ -1,4 +1,4 @@
-package book.talk.config;
+package book.talk.callbyaladin.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
