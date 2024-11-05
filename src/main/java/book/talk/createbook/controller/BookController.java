@@ -18,7 +18,7 @@ public class BookController {
     @PostMapping("api/create-book")
     public String createBook(@RequestBody BookRequest request) {
         // 서비스 메서드를 호출하여 데이터 저장
-        bookCreateService.createOrUpdateBook(request.getBookId(), request.getThumbnail(), request.getBookTitle());
+        bookCreateService.createOrUpdateBook(request.getIsbn13(),request.getThumbnail(), request.getBookTitle());
         return "Group create or update successfully";
     }
 }

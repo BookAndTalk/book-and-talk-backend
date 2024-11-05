@@ -2,6 +2,8 @@ package book.talk.createbook.entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BookRepository extends JpaRepository<BookEntity, Long> {
+import java.util.Optional;
 
+public interface BookRepository extends JpaRepository<BookEntity, Long> {
+    Optional<BookEntity> findByIsbn13(int isbn13);
 }
