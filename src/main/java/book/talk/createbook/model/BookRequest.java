@@ -6,5 +6,5 @@ import lombok.Data;
 public class BookRequest {
     private String thumbnail;
     private String bookTitle;
-    private int isbn13;
+    private Long isbn13;
 }

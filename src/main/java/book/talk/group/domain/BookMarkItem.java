@@ -1,5 +1,6 @@
 package book.talk.group.domain;
 
+import book.talk.createbook.entity.BookEntity;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
