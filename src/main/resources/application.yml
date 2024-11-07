@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: talk
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: "11"
+    platform: h2
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+aladin:
+  api:
+    key: ttbalsrb13881504001
+    base-url: http://www.aladin.co.kr/ttb/api/ItemList.aspx
+
+kakao:
+  api:
+    key: 3e927e69a8766cb50238d343e42531a2
+    base-url: https://dapi.kakao.com/v2/search
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
