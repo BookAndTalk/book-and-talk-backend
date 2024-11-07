@@ -33,7 +33,10 @@ public class GroupController {
         club.setName(form.getName());
         club.setLocation(form.getLocation());
         club.setBookTitle(form.getBookTitle());
+<<<<<<< HEAD
         club.setMaxParticipants(form.getMaxParticipants());
+=======
+>>>>>>> c6401b9 (1차 수정 테스트)
         club.setParticipants(form.getParticipants());
         club.setStartDate(form.getStartDate());
         club.setDuration(form.getDuration());
