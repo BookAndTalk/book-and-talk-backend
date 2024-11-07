@@ -23,7 +23,7 @@ public class GroupService {
 
     @Transactional
     public Groups updateGroup(Long groupId, String name, String location, String bookTitle,
-                             int participants, LocalDate startDate, int duration, String groupDescription) {
+                              int maxParticipants, LocalDate startDate, int duration, String groupDescription) {
         Groups group = groupRepository.findOne(groupId);
         if (group == null) {
             throw new IllegalArgumentException("존재하지 않는 그룹입니다.");
@@ -32,7 +32,7 @@ public class GroupService {
         group.setName(name);
         group.setLocation(location);
         group.setBookTitle(bookTitle);
-        group.setParticipants(participants);
+        group.setMaxParticipants(maxParticipants);
         group.setStartDate(startDate);
         group.setDuration(duration);
         group.setGroupDescription(groupDescription);

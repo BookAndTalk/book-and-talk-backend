@@ -32,9 +32,12 @@ public class GroupController {
         Club club = new Club();
         club.setName(form.getName());
         club.setLocation(form.getLocation());
+        club.setGroupImage(form.getGroupImage());
         club.setBookTitle(form.getBookTitle());
         club.setMaxParticipants(form.getMaxParticipants());
-        club.setParticipants(form.getParticipants());
+//        club.setParticipants(form.getParticipants());
+//        club.setStatus(form.getStatus());
+//        club.setHostId(form.getHostId());
         club.setStartDate(form.getStartDate());
         club.setDuration(form.getDuration());
         club.setGroupDescription(form.getGroupDescription());
@@ -53,7 +56,7 @@ public class GroupController {
         form.setName(group.getName());
         form.setLocation(group.getLocation());
         form.setBookTitle(group.getBookTitle());
-        form.setParticipants(group.getParticipants());
+        form.setMaxParticipants(group.getMaxParticipants());
         form.setStartDate(group.getStartDate());
         form.setDuration(group.getDuration());
         form.setGroupDescription(group.getGroupDescription());
@@ -69,7 +72,7 @@ public class GroupController {
                 form.getName(),
                 form.getLocation(),
                 form.getBookTitle(),
-                form.getParticipants(),
+                form.getMaxParticipants(),
                 form.getStartDate(),
                 form.getDuration(),
                 form.getGroupDescription()

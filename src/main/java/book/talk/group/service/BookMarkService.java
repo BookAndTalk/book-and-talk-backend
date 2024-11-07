@@ -36,12 +36,12 @@ public class BookMarkService {
         bookMark.setName(group.getName());
         bookMark.setLocation(group.getLocation());
         bookMark.setBookTitle(group.getBookTitle());
-        bookMark.setParticipants(group.getParticipants());
+        bookMark.setMaxParticipants(group.getMaxParticipants());
         bookMark.setStartDate(group.getStartDate());
         bookMark.setDuration(group.getDuration());
         bookMark.setGroupDescription(group.getGroupDescription());
 
-        bookMark.setStatus(BookMarkStatus.ACTIVE);
+//        bookMark.setStatus(BookMarkStatus.ACTIVE);
 
         bookMarkRepository.save(bookMark);
         return bookMark;
@@ -61,6 +61,6 @@ public class BookMarkService {
         if (bookMark == null) {
             throw new IllegalArgumentException("존재하지 않는 북마크입니다.");
         }
-        bookMark.setStatus(BookMarkStatus.CANCEL);
+//        bookMark.setStatus(BookMarkStatus.CANCEL);
     }
 }

@@ -7,7 +7,6 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter
-@DiscriminatorValue("C")
 public class Club extends Groups {
 
 

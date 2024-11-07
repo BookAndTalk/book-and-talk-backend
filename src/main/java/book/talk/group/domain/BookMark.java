@@ -29,8 +29,10 @@ public class BookMark {
     private String location;        //장소
     private String groupImage ;
     private String bookTitle;       //책 제목
-    private int maxParticipants;       //최대참여인원
-    private int participants;       //참여인원
+    private int maxParticipants;    //최대참여인원
+    private int participants = 1;       //참여인원 (1 고정)
+    private String status = "모집중";  //모집 상태
+    private Long hostId = 3L;       //호스트 id
     private LocalDate startDate;    //시작날짜
     private int duration;           //기간
     private String groupDescription; //북클럽소개
@@ -41,8 +43,11 @@ public class BookMark {
     @Column(name = "bookMark_date", columnDefinition = "TIMESTAMP")
     private LocalDateTime bookMarkDate; // 생성시간
 
-    @Enumerated(EnumType.STRING)
-    private BookMarkStatus status;
+    /**
+     * 북마크 상태
+     @Enumerated(EnumType.STRING)
+     private BookMarkStatus status;
+     */
 
     //==연관관계 메서드==//
     public void addBookMarkItem(BookMarkItem bookMarkItem) {
@@ -54,7 +59,7 @@ public class BookMark {
     public static BookMark createBookMark(Groups groups, BookMarkItem... bookMarkItems) {
         BookMark bookMark = new BookMark();
         bookMark.setGroups(groups);
-        bookMark.setStatus(BookMarkStatus.ACTIVE);
+//        bookMark.setStatus(BookMarkStatus.ACTIVE);
         bookMark.setBookMarkDate(LocalDateTime.now());
 
         for (BookMarkItem bookMarkItem : bookMarkItems) {

@@ -25,6 +25,10 @@ public class BookMarkItem {
     @JoinColumn(name = "bookMarks_id")
     private BookMark bookMark;
 
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private BookEntity book;
+
     public BookMarkItem(Groups group) {
         this.group = group;
     }
