@@ -20,6 +20,25 @@ spring:
       enabled: true
       path: /h2-console
 
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client_id: 7b6213bdc6df67c5716661bf058d0763
+            client-name: Kakao
+            authorization-grant-type: authorization_code
+            redirect_uri: http://localhost:8080/login/oauth2/code/kakao
+            scope:
+              - profile_nickname
+              - account_email
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token_uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user_name_attribute: id
+
 aladin:
   api:
     key: ttbalsrb13881504001
@@ -33,9 +52,14 @@ kakao:
 logging:
   level:
     org:
+      springframework.security: DEBUG
       hibernate:
         SQL: debug
         type:
           descriptor:
             sql:
               BasicBinder: trace
+
+jwt:
+  issuer: delipr0917@gmail.com
+  secret_key: book-and-talk
