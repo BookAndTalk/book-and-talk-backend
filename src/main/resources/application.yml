@@ -1,0 +1,65 @@
+spring:
+  application:
+    name: talk
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: "11"
+    platform: h2
+
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  security:
+    oauth2:
+      client:
+        registration:
+          kakao:
+            client_id: 7b6213bdc6df67c5716661bf058d0763
+            client-name: Kakao
+            authorization-grant-type: authorization_code
+            redirect_uri: http://localhost:8080/login/oauth2/code/kakao
+            scope:
+              - profile_nickname
+              - account_email
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            token_uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+            user_name_attribute: id
+
+aladin:
+  api:
+    key: ttbalsrb13881504001
+    base-url: http://www.aladin.co.kr/ttb/api/ItemList.aspx
+
+kakao:
+  api:
+    key: 3e927e69a8766cb50238d343e42531a2
+    base-url: https://dapi.kakao.com/v2/search
+
+logging:
+  level:
+    org:
+      springframework.security: DEBUG
+      hibernate:
+        SQL: debug
+        type:
+          descriptor:
+            sql:
+              BasicBinder: trace
+
+jwt:
+  issuer: delipr0917@gmail.com
+  secret_key: book-and-talk
