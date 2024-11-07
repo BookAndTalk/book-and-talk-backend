@@ -1,5 +1,6 @@
 package book.talk.group.domain;
 
+import book.talk.createbook.entity.BookEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -29,6 +30,10 @@ public abstract class Groups {
     private LocalDate startDate;    //시작날짜
     private int duration;           //기간
     private String groupDescription; //북클럽소개
+
+    @ManyToOne
+    @JoinColumn(name = "book_id")
+    private BookEntity book;
 
     @ManyToMany(mappedBy = "groups")
     private List<Category> categories = new ArrayList<>();

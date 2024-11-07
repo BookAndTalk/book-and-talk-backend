@@ -1,5 +1,7 @@
 package book.talk.group.controller;
 
+import book.talk.createbook.entity.BookEntity;
+import book.talk.createbook.entity.BookRepository;
 import book.talk.group.domain.Club;
 import book.talk.group.domain.Groups;
 import book.talk.group.service.GroupService;
@@ -11,11 +13,11 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/groups")
+@RequestMapping("/api/groups")
 public class GroupController {
 
     private final GroupService groupService;
-
+    private final BookRepository bookRepository;
     //모임목록
     @GetMapping
     public List<Groups> list() {
@@ -35,13 +37,12 @@ public class GroupController {
         club.setGroupImage(form.getGroupImage());
         club.setBookTitle(form.getBookTitle());
         club.setMaxParticipants(form.getMaxParticipants());
-//        club.setParticipants(form.getParticipants());
-//        club.setStatus(form.getStatus());
-//        club.setHostId(form.getHostId());
         club.setStartDate(form.getStartDate());
         club.setDuration(form.getDuration());
         club.setGroupDescription(form.getGroupDescription());
 
+        BookEntity book = bookRepository.findById(form.getBookId()).get();
+        club.setBook(book);
         groupService.saveGroup(club);
         return "group";
     }
