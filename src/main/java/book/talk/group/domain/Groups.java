@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +31,7 @@ public abstract class Groups {
     private LocalDate startDate;    //시작날짜
     private int duration;           //기간
     private String groupDescription; //북클럽소개
+    private LocalDateTime createdAt;
 
     @ManyToOne
     @JoinColumn(name = "book_id")
