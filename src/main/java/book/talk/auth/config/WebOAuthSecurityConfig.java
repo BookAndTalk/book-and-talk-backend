@@ -56,21 +56,21 @@ public class WebOAuthSecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .addFilterBefore(tokenAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
                 .authorizeRequests(auth -> auth
-//                        .requestMatchers(new AntPathRequestMatcher("/api/token")).permitAll()
-//                        .requestMatchers(new AntPathRequestMatcher("/api**")).authenticated()
+                        .requestMatchers(new AntPathRequestMatcher("/api/token")).permitAll()
+                        .requestMatchers(new AntPathRequestMatcher("/api**")).authenticated()
                         .anyRequest().permitAll())
-//                .oauth2Login(oauth2 -> oauth2
-////                        .loginPage("/login")
-//                                .authorizationEndpoint(authorizationEndpoint -> authorizationEndpoint.authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository()))
-//                                .userInfoEndpoint(userInfoEndpoint -> userInfoEndpoint.userService(oAuth2UserCustomService))
-//                                .successHandler(oAuth2SuccessHandler())
-//                )
-//                .exceptionHandling(exceptionHandling -> exceptionHandling
-//                        .defaultAuthenticationEntryPointFor(
-//                                new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED),
-//                                new AntPathRequestMatcher("/api/**")
-//                        )
-//                )
+                .oauth2Login(oauth2 -> oauth2
+//                        .loginPage("/login")
+                                .authorizationEndpoint(authorizationEndpoint -> authorizationEndpoint.authorizationRequestRepository(oAuth2AuthorizationRequestBasedOnCookieRepository()))
+                                .userInfoEndpoint(userInfoEndpoint -> userInfoEndpoint.userService(oAuth2UserCustomService))
+                                .successHandler(oAuth2SuccessHandler())
+                )
+                .exceptionHandling(exceptionHandling -> exceptionHandling
+                        .defaultAuthenticationEntryPointFor(
+                                new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED),
+                                new AntPathRequestMatcher("/api/**")
+                        )
+                )
                 .build();
     }
 
