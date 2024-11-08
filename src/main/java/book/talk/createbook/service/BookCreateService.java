@@ -12,7 +12,7 @@ public class BookCreateService {
         this.repository = repository;
     }
 
-    public void createOrUpdateBook(int isbn13, String thumbnail, String bookTitle) {
+    public void createOrUpdateBook(Long isbn13, String thumbnail, String bookTitle) {
         // 1. bookId로 책ID가 있는지 확인
         BookEntity book = repository.findByIsbn13(isbn13).orElse(null);
 

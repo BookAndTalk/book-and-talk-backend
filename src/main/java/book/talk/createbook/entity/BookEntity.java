@@ -15,6 +15,6 @@ public class BookEntity {
 
     private String thumbnail;
     private String bookTitle;
-    private int isbn13;
+    private Long isbn13;
     private int groupCount;
 }
